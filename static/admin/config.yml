@@ -1,5 +1,7 @@
 backend:
-  name: test-repo
+  name: github
+  repo: patmason/gatsby_tabula_rasa_netlifycms
+  branch: main
 media_folder: static/assets
 public_folder: /assets
 collections:
