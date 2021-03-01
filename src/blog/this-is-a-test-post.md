@@ -5,3 +5,7 @@ title: This is a test post
 image: /src/blog/assets/ig_orig.jpg
 ---
 # *This is the body of a test post*
+
+
+
+![](/assets/ig_orig.jpg)
