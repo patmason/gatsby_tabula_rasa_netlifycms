@@ -23,6 +23,22 @@ const Image = () => {
           }
         }
       }
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              title
+              feature_image {
+                childImageSharp {
+                  fluid(maxWidth: 700) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -30,7 +46,17 @@ const Image = () => {
     return <div>Picture not found</div>
   }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <>
+      {data.allMarkdownRemark.edges.map(edge => {
+        return (
+          <Img
+            fluid={edge.node.frontmatter.feature_image.childImageSharp.fluid}
+          />
+        )
+      })}
+    </>
+  )
 }
 
 export default Image

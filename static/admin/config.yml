@@ -14,4 +14,15 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
-      - { name: feature_image, label: Feature Image, widget: image }
+      - {
+          name: feature_image,
+          label: Feature Image,
+          widget: image,
+          allow_multiple: false,
+        }
+      - label: "Project Images"
+        name: "projectImages"
+        widget: "list"
+        summary: "{{fields.image}}"
+        fields:
+          - { label: Image, name: image, widget: image }

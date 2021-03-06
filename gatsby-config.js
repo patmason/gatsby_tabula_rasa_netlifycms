@@ -11,8 +11,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/static/assets`,
         name: "netlifycms_images",
+        path: `${__dirname}/static/assets`,
       },
     },
     {
@@ -47,7 +47,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              staticFolderName: "static",
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
